@@ -55,6 +55,7 @@ cd miner
 ./configure CFLAGS="-O3" 
 make 
 cd miner 
+sudo mv minerd /usr/local/bin/
 clear
 screen miner
 
