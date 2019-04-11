@@ -59,9 +59,10 @@ cd cpuminer-multi
 ./configure CFLAGS="-march=native" --with-crypto 
 ./build.sh
 cd cpuminer-multi
-sudo mv minerd /usr/local/bin/
+sudo mv cpuminer /usr/local/bin/
 clear
 screen miner
+cd cpuminer-multi
 
 # Comando iniciador da mineração
 #
