@@ -47,6 +47,7 @@ sudo apt-get install screen -y
 sudo  apt-get install automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev make g++ -y
 sudo rm -r cpuminer-multi 
 git clone https://github.com/tpruvot/cpuminer-multi.git cpuminer-multi
+
 clear
 
 
@@ -58,6 +59,7 @@ cd cpuminer-multi
 ./configure CFLAGS="-march=native" --with-crypto 
 ./build.sh
 cd cpuminer-multi
+sudo mv minerd /usr/local/bin/
 clear
 screen miner
 
