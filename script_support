@@ -61,8 +61,7 @@ cd cpuminer-multi
 cd cpuminer-multi
 sudo mv cpuminer /usr/local/bin/
 clear
-screen miner
-cd cpuminer-multi
+screen
 
 # Comando iniciador da mineração
 #
