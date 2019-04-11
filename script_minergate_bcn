@@ -4,7 +4,7 @@ clear
 #------------------------------
 #          Creditos
 #   Miner by tpruvot
-#   By HumansLothbrok
+#   By Rirogan
 #------------------------------
 
 bash=$(echo $BASH)
