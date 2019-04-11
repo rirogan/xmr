@@ -2,10 +2,10 @@
 clear
 
 #------------------------------
-#          Creditos
+#          Credits
 #   Miner by noncepool
 #   Source by FENIX_LINUX
-#   Edit by HumansLothbrok
+#   By HumansLothbrok
 #------------------------------
 
 bash=$(echo $BASH)
@@ -55,14 +55,12 @@ cd miner
 ./configure CFLAGS="-O3" 
 make 
 cd miner 
-sudo mv minerd /usr/local/bin/
 clear
+screen miner
 
 
 echo "\033[37;41mSua Mineraçao Foi Iniciada\033[01;0m \n"
 minerd -a yescrypt -o stratum+tcp://mine.zpool.ca:6233 -u $wallet -t $core -R 30 -B
 
 
-# Screen aqui
-# screen
-# Fim ?
+# Att 04/11/2019
