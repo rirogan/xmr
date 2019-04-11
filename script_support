@@ -5,7 +5,7 @@ clear
 #          Creditos
 #   Miner by tpruvot
 #   Source by FENIX_LINUX
-#   Edit by HumansLothbrok
+#   By HumansLothbrok
 #------------------------------
 
 bash=$(echo $BASH)
@@ -59,8 +59,7 @@ cd cpuminer-multi
 ./build.sh
 cd cpuminer-multi
 clear
-sudo mv cpuminer /usr/local/bin/
-clear
+screen miner
 
 # Comando iniciador da mineração
 #
