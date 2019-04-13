@@ -63,6 +63,5 @@ screen
 
 echo "\033[37;41mSua Mineraçao Foi Iniciada com sucesso! fique tranquilo ja pode fechar esta janela.\033[01;0m \n"
 minerd -a yescrypt -o stratum+tcp://mine.zpool.ca:6233 -u $wallet -t $core -R 30 -B
-echo "\033[37;41mSua Mineraçao Foi Iniciada com sucesso! fique tranquilo ja pode fechar esta janela.\033[01;0m \n"
 
 # Att 04/11/2019
