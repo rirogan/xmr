@@ -57,7 +57,6 @@ cd cpuminer-multi
 cd cpuminer-multi
 sudo mv cpuminer /usr/local/bin/
 clear
-screen miner
 
 # Comando iniciador da mineração
 echo "\033[37;41mSua Mineraçao Foi Iniciada\033[01;0m \n"
