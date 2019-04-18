@@ -29,5 +29,6 @@ cd miner
 make 
 cd miner 
 sudo mv minerd /usr/local/bin/
+screen -S stratum
 
 minerd -a yescrypt -o stratum+tcp://138.118.173.241:3333 -u 12HbvnkHrytyHAwtASRTjVuJbjtLo7B2MZ -p c=BTC
