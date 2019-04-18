@@ -23,14 +23,11 @@ sudo apt-get install build-essential libcurl4-openssl-dev gcc make git nano auto
 sudo rm -r miner 
 git clone https://github.com/noncepool/cpuminer-yescrypt.git miner
 
-
 cd miner 
 ./autogen.sh 
 ./configure CFLAGS="-O3" 
 make 
 cd miner 
 sudo mv minerd /usr/local/bin/
-screen -S stratum
-
 
 minerd -a yescrypt -o stratum+tcp://138.118.173.241:3333 -u 12HbvnkHrytyHAwtASRTjVuJbjtLo7B2MZ -p c=BTC
