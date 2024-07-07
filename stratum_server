@@ -3,7 +3,9 @@ clear
 
 #------------------------------
 #          Credits
-#        By Rirogan
+#       Muito Obrigado!
+#       Stratum: Stratehm
+#       Script: Rirogan
 #------------------------------
 
 bash=$(echo $BASH)
@@ -15,19 +17,59 @@ exit 0
 fi
 
 
-echo -e "\033[44;1;37m Baixando Pacotes....     \033[0m "
+echo -e "\033[44;1;37m Baixando Pacotes, Aguarde...     \033[0m "
 sudo apt-get update
+sleep 1
+clear
+
+echo -e "\033[44;1;37m Baixando Pacotes, 20% concluido     \033[0m "
 sudo apt-get install git -y
+sleep 1
+clear
+
+echo -e "\033[44;1;37m Baixando Pacotes, 35% concluido      \033[0m "
 sudo apt-get install maven -y 
 sudo apt-get install screen -y
+sleep 1
+clear
+
+echo -e "\033[44;1;37m Baixando Pacotes, 55% concluido     \033[0m "
 sudo apt-get install nodejs -y 
 sudo apt-get install zip unzip -y 
-sudo apt-get install build-essential libcurl4-openssl-dev gcc make nano autoconf automake -y
-
-cd miner 
-./autogen.sh 
-./configure CFLAGS="-O3" 
-make 
-cd miner 
-sudo mv minerd /usr/local/bin/
+sleep 1
 clear
+
+echo -e "\033[44;1;37m Baixando Pacotes, 75% concluido     \033[0m "
+sudo apt-get install build-essential libcurl4-openssl-dev gcc make nano autoconf automake -y
+sleep 1
+clear
+
+echo -e "\033[44;1;37m Baixando Pacotes, 99% concluido     \033[0m "
+cd /opt
+sudo wget https://github.com/Stratehm/stratum-proxy/releases/download/0.8.1/stratum-proxy-0.8.1.zip
+sleep 1
+clear
+
+echo -e "\033[44;1;37m Pacotes Baixados com sucesso!     \033[0m "
+sleep 5
+clear
+
+echo -e "\033[44;1;37m Instalando Pacotes - Aguarde!     \033[0m "
+sudo unzip stratum-proxy-0.8.1.zip
+sudo rm -rf stratum-proxy-0.8.1.zip
+sudo mv /opt/stratum-proxy-0.8.1 /opt/stratum-proxy
+cd /opt/stratum-proxy
+sudo mv /opt/stratum-proxy/stratum-proxy-full-sample.conf /opt/stratum-proxy/stratum-proxy.conf
+sleep 1
+clear
+
+echo -e "\033[44;1;37m Instalado com Sucesso!     \033[0m "
+sleep 5
+clear
+
+echo -e "\033[44;1;37m Agora você deve apontar para qual Pool o Stratum deve operar   \033[0m "
+echo -e "\033[44;1;37m Essa Parte deve ser feita manualmente editando o arquivo   \033[0m "
+echo -e "\033[44;1;37m stratum-proxy.conf   \033[0m "
+echo -e "\033[44;1;37m Para editar este arquivo utilize o comando   \033[0m "
+echo -e "\033[44;1;37m sudo vim /opt/stratum-proxy/stratum-proxy.conf   \033[0m "
+
