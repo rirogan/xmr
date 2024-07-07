@@ -15,12 +15,14 @@ exit 0
 fi
 
 
+echo -e "\033[44;1;37m Baixando Pacotes....     \033[0m "
 sudo apt-get update
 sudo apt-get install git -y
+sudo apt-get install maven -y 
 sudo apt-get install screen -y
+sudo apt-get install nodejs -y 
+sudo apt-get install zip unzip -y 
 sudo apt-get install build-essential libcurl4-openssl-dev gcc make nano autoconf automake -y
-sudo rm -r miner 
-git clone https://github.com/noncepool/cpuminer-yescrypt.git miner
 
 cd miner 
 ./autogen.sh 
