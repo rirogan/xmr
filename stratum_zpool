@@ -3,8 +3,7 @@ clear
 
 #------------------------------
 #          Credits
-#   Miner by noncepool
-#   By HumansLothbrok
+#        By Rirogan
 #------------------------------
 
 bash=$(echo $BASH)
