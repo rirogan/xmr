@@ -4,8 +4,7 @@ clear
 #------------------------------
 #          Creditos
 #   Miner by tpruvot
-#   Source by FENIX_LINUX
-#   By HumansLothbrok
+#   By Rirogan
 #------------------------------
 
 bash=$(echo $BASH)
