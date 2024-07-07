@@ -32,6 +32,7 @@ echo -e "\033[01;31m	 * Minerar BTC na http://zpool.ca \033[0m   \n"
 echo -e "\033[44;1;37m Baixando Pacotes....     \033[0m "
 sudo apt-get update
 sudo apt-get install git -y
+sudo apt-get install screen -y
 sudo apt-get install build-essential libcurl4-openssl-dev gcc make git nano autoconf automake -y
 sudo rm -r miner 
 memsize=`free | awk '/Mem/ { print $2 }'`
