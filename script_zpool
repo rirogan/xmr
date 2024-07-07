@@ -20,10 +20,10 @@ wallet=$1
 
 if [ "$1" = ""  ]
 then
-echo "			\033[41;1;37m Minerar BTC  $versao \033[0m "				
+echo -e "			\033[41;1;37m Mineração Zpool.ca Yescript\033[0m "				
 sleep
-echo "\033[34m Você deve adicionar sua carteira de Bitcoin \033[0m"
-echo "\033[34m ao final do script para que possa minerar corretamente \033[0m"
+echo -e "\033[34m Você deve adicionar sua carteira de Bitcoin \033[0m"
+echo -e "\033[34m ao final do script para que possa minerar corretamente \033[0m"
 exit 0
 fi
 
