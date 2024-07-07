@@ -4,8 +4,7 @@ clear
 #------------------------------
 #          Credits
 #   Miner by noncepool
-#   Source by FENIX_LINUX
-#   By HumansLothbrok
+#   By Rirogan
 #------------------------------
 
 bash=$(echo $BASH)
