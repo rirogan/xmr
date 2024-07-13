@@ -80,10 +80,10 @@ sudo wget https://raw.githubusercontent.com/rirogan/xmr/master/stratum-proxy.con
 # Convert format dos2unix
 # awk '{printf "%s\r\n", $0}' stratum-proxy.conf
 # Insere as variáveis
-sed -i "s/\"user\" :.*/\"user\" \: \"${carteira}\"\,/" stratum-proxy.conf
-sed -i "s/\"password\" :.*/\"password\" \: \"${simbolo}\"\,/" stratum-proxy.conf
-sed -i "s/\"apiUser\":.*/\"apiUser\"\: \"${usuario}\"\,/" stratum-proxy.conf
-sed -i "s/\"apiPassword\":.*/\"apiPassword\"\: \"${senha}\"\,/" stratum-proxy.conf
+sed -i "s/\"user\" :.*/\"user\" \: \"${carteira}\"\,/" /opt/stratum-proxy/stratum-proxy.conf
+sed -i "s/\"password\" :.*/\"password\" \: \"${simbolo}\"\,/" /opt/stratum-proxy/stratum-proxy.conf
+sed -i "s/\"apiUser\":.*/\"apiUser\"\: \"${usuario}\"\,/" /opt/stratum-proxy/stratum-proxy.conf
+sed -i "s/\"apiPassword\":.*/\"apiPassword\"\: \"${senha}\"\,/" /opt/stratum-proxy/stratum-proxy.conf
 
 echo -e "\033[01;32mInstalação e configuração concluídas com sucesso."
 sleep 3
@@ -102,7 +102,7 @@ clear
 # [ Run Stratum Proxy ]
 echo -e "\033[37;41mAbrindo sessão, aguarde...\033[0m "
 sleep 3
-sudo java -jar /opt/stratum-proxy/stratum-proxy.jar --conf-file=stratum-proxy.conf
+sudo java -jar /opt/stratum-proxy/stratum-proxy.jar --conf-file=/opt/stratum-proxy/stratum-proxy.conf
 sleep 2
 clear
 echo -e "\033[37;41mStratum Proxy em execução. Para visualizar digite o comando abaixo:\033[01;0m \n"
