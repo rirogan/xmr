@@ -29,7 +29,7 @@ fi
 
 # Aqui se encontra a atualizaão do sistema e a instalação dos plugins e download do minerador.
 
-echo -e "\033[44;1;37mAtualizando lista de pacotes...\033[0m"
+echo "\033[44;1;37mAtualizando lista de pacotes...\033[0m"
 sudo apt-get update > /dev/null
 sleep 2
 clear
@@ -46,8 +46,8 @@ if [ "$memsize" -lt "1000000" ]
 then
  if [ "$swapsize" -eq "0" ]
  then
-  echo -e "Foi detectado que você possui menos que 1GB de RAM!"
-  echo -e "Será criada uma partição SWAP de 1GB para que o CPUMiner-OPT seja compilado com sucesso."
+  echo "Foi detectado que você possui menos que 1GB de RAM!"
+  echo "Será criada uma partição SWAP de 1GB para que o CPUMiner-OPT seja compilado com sucesso."
   sudo dd if=/dev/zero of=/var/swap.img bs=1024k count=1000 > /dev/null
   sudo mkswap /var/swap.img > /dev/null
   sudo chmod 600 /var/swap.img
@@ -57,18 +57,18 @@ fi
 sleep 2
 clear
 
-echo -e "\033[44;1;37mBaixando CPUMiner-OPT 24.4...\033[0m"
+echo "\033[44;1;37mBaixando CPUMiner-OPT 24.4...\033[0m"
 sudo wget -q https://github.com/JayDDee/cpuminer-opt/archive/v24.4.tar.gz
 sleep 2
 clear
 
-echo -e "\033[44;1;37mExtraindo CPUMiner-OPT 24.4...\033[0m"
+echo "\033[44;1;37mExtraindo CPUMiner-OPT 24.4...\033[0m"
 tar -zxvf v24.4.tar.gz > /dev/null
 cd cpuminer-opt-24.4
 sleep 2
 clear
 
-echo -e "\033[44;1;37mCompilando CPUMiner-OPT 24.4...(pode demorar um pouco)\033[0m"
+echo "\033[44;1;37mCompilando CPUMiner-OPT 24.4...(pode demorar um pouco)\033[0m"
 rm -f config.status
 ./autogen.sh || echo done
 CFLAGS="-O3 -march=native -Wall" ./configure --with-curl
