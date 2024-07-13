@@ -57,25 +57,25 @@ fi
 sleep 2
 clear
 
-echo -e "\033[44;1;37mBaixando CPUMiner-OPT v3.8.2...\033[0m"
-wget -q https://github.com/JayDDee/cpuminer-opt/archive/v3.8.2.tar.gz
+echo -e "\033[44;1;37mBaixando CPUMiner-OPT 24.4...\033[0m"
+sudo wget -q https://github.com/JayDDee/cpuminer-opt/archive/v24.4.tar.gz
 sleep 2
 clear
 
-echo -e "\033[44;1;37mExtraindo CPUMiner-OPT v3.8.2...\033[0m"
-tar -zxvf v3.8.2.tar.gz > /dev/null
-cd cpuminer-opt-3.8.2
+echo -e "\033[44;1;37mExtraindo CPUMiner-OPT 24.4...\033[0m"
+tar -zxvf v24.4.tar.gz > /dev/null
+cd cpuminer-opt-24.4
 sleep 2
 clear
 
-echo -e "\033[44;1;37mCompilando CPUMiner-OPT v3.8.2...(pode demorar um pouco)\033[0m"
-make distclean || echo clean
+echo -e "\033[44;1;37mCompilando CPUMiner-OPT 24.4...(pode demorar um pouco)\033[0m"
 rm -f config.status
 ./autogen.sh || echo done
 CFLAGS="-O3 -march=native -Wall" ./configure --with-curl
 make -j 4
 strip -s cpuminer
 # ln ./cpuminer ../cpuminer
+cd cpuminer-opt-24.4
 sudo mv cpuminer /usr/local/bin/
 clear
 
