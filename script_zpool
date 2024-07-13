@@ -20,16 +20,16 @@ wallet=$1
 
 if [ "$1" = ""  ]
 then
-echo -e "			\033[41;1;37m Mineração Zpool.ca Yescript\033[0m "				
+echo "			\033[41;1;37m Mineração Zpool.ca Yescript\033[0m "				
 sleep
-echo -e "\033[34m Você deve adicionar sua carteira de Bitcoin \033[0m"
-echo -e "\033[34m ao final do script para que possa minerar corretamente \033[0m"
+echo "\033[34m Você deve adicionar sua carteira de Bitcoin \033[0m"
+echo "\033[34m ao final do script para que possa minerar corretamente \033[0m"
 exit 0
 fi
 
-echo -e "CARTEIRA CONFIGURADA : \033[01;32m $wallet\033[0m   "
-echo -e "\033[01;31m	 * Minerar BTC na http://zpool.ca \033[0m   \n"
-echo -e "\033[44;1;37m Baixando Pacotes....     \033[0m "
+echo "CARTEIRA CONFIGURADA : \033[01;32m $wallet\033[0m   "
+echo "\033[01;31m	 * Minerar BTC na http://zpool.ca \033[0m   \n"
+echo "\033[44;1;37m Baixando Pacotes....     \033[0m "
 sudo apt-get update
 sudo apt-get install git -y
 sudo apt-get install screen -y
@@ -42,8 +42,8 @@ if [ "$memsize" -lt "1000000" ]
 then
  if [ "$swapsize" -eq "0" ]
  then
-  echo -e "Foi detectado que você possui menos que 1GB de RAM!"
-  echo -e "Será criada uma partição SWAP de 1GB para que o CPUMiner Noncepool seja compilado com sucesso."
+  echo "Foi detectado que você possui menos que 1GB de RAM!"
+  echo "Será criada uma partição SWAP de 1GB para que o CPUMiner Noncepool seja compilado com sucesso."
   sudo dd if=/dev/zero of=/var/swap.img bs=1024k count=1000 > /dev/null
   sudo mkswap /var/swap.img > /dev/null
   sudo chmod 600 /var/swap.img
@@ -53,12 +53,12 @@ fi
 sleep 2
 clear
 
-echo -e "\033[44;1;37mBaixando CPUMiner Noncepool...\033[0m"
+echo "\033[44;1;37mBaixando CPUMiner Noncepool...\033[0m"
 git clone https://github.com/noncepool/cpuminer-yescrypt.git miner
 sleep 2
 clear
 
-echo -e "\033[44;1;37m Configurando e Compilando Recursos.....     \033[0m "
+echo "\033[44;1;37m Configurando e Compilando Recursos.....     \033[0m "
 cd miner 
 ./autogen.sh 
 ./configure CFLAGS="-O3" 
@@ -68,6 +68,6 @@ sudo mv minerd /usr/local/bin/
 clear
 
 
-echo -e "\033[37;41mSua Mineraçao Foi Iniciada com sucesso!\033[01;0m \n"
-echo -e "\033[44;1;37m Veja abaixo o status da mineracao:   \033[0m "
+echo "\033[37;41mSua Mineraçao Foi Iniciada com sucesso!\033[01;0m \n"
+echo "\033[44;1;37m Veja abaixo o status da mineracao:   \033[0m "
 minerd -a yescrypt -o stratum+tcp://na.mine.zpool.ca:6233 -u $wallet
