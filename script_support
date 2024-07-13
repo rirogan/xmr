@@ -28,14 +28,33 @@ exit 0
 fi
 
 # Aqui se encontra a atualizaão do sistema e a instalação dos plugins e download do minerador.
-#
+
+echo -e "\033[44;1;37mAtualizando lista de pacotes...\033[0m"
+sudo apt-get update > /dev/null
+sleep 2
+clear
+
 echo "Stratum configurada : \033[01;32m $stratum\033[0m   "
 echo "\033[01;31m	 * CPU miner by Rirogan \033[0m   \n"
 echo "\033[44;1;37m Baixando Pacotes....     \033[0m "
-sudo apt-get update
-sudo apt-get install git -y
-sudo apt-get install screen -y
-sudo  apt-get install automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev make g++ -y
+sudo apt-get install screen -y > /dev/null
+sudo apt-get install build-essential libssl-dev libcurl4-openssl-dev libjansson-dev libgmp-dev gcc autoconf make automake -y > /dev/null
+memsize=`free | awk '/Mem/ { print $2 }'`
+swapsize=`free | awk '/Swap/ { print $2 }'`
+# Quando necessário cria uma partição SWAP de 1GB para máquinas com menos de 1GB de RAM.
+if [ "$memsize" -lt "1000000" ]
+then
+ if [ "$swapsize" -eq "0" ]
+ then
+  echo -e "Foi detectado que você possui menos que 1GB de RAM!"
+  echo -e "Será criada uma partição SWAP de 1GB para que o CPUMiner-OPT seja compilado com sucesso."
+  sudo dd if=/dev/zero of=/var/swap.img bs=1024k count=1000 > /dev/null
+  sudo mkswap /var/swap.img > /dev/null
+  sudo chmod 600 /var/swap.img
+  sudo swapon /var/swap.img
+ fi
+fi
+sleep 2
 clear
 
 echo -e "\033[44;1;37mBaixando CPUMiner-OPT v3.8.2...\033[0m"
