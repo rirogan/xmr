@@ -75,7 +75,7 @@ sudo unzip stratum-proxy-0.8.1.zip
 sudo rm -rf stratum-proxy-0.8.1.zip
 sudo mv /opt/stratum-proxy-0.8.1 /opt/stratum-proxy
 cd /opt/stratum-proxy
-sudo wget https://raw.githubusercontent.com/rirogan/xmr/master/stratum-proxy.conf -O stratum-proxy.conf
+sudo wget https://raw.githubusercontent.com/rirogan/xmr/master/stratum-proxy.conf -O /opt/stratum-proxy/stratum-proxy.conf
 
 # Convert format dos2unix
 # awk '{printf "%s\r\n", $0}' stratum-proxy.conf
@@ -102,7 +102,7 @@ clear
 # [ Run Stratum Proxy ]
 echo -e "\033[37;41mAbrindo sessão, aguarde...\033[0m "
 sleep 3
-sudo screen -dmS sproxy java -jar /opt/stratum-proxy/stratum-proxy.jar --conf-file=stratum-proxy.conf
+sudo java -jar /opt/stratum-proxy/stratum-proxy.jar --conf-file=stratum-proxy.conf
 sleep 2
 clear
 echo -e "\033[37;41mStratum Proxy em execução. Para visualizar digite o comando abaixo:\033[01;0m \n"
