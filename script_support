@@ -3,8 +3,7 @@ clear
 
 #------------------------------
 #          Creditos
-#   Miner by JayDDee
-#   Script By Rirogan
+#      Script By Rirogan
 #------------------------------
 
 bash=$(echo $BASH)
@@ -57,31 +56,22 @@ fi
 sleep 2
 clear
 
-echo "\033[44;1;37mBaixando CPUMiner-OPT 24.4...\033[0m"
-sudo wget -q https://github.com/JayDDee/cpuminer-opt/archive/v24.4.tar.gz
+echo -e "\033[44;1;37mBaixando CPUMiner...\033[0m"
+git clone https://github.com/noncepool/cpuminer-yescrypt.git miner
 sleep 2
 clear
 
-echo "\033[44;1;37mExtraindo CPUMiner-OPT 24.4...\033[0m"
-tar -zxvf v24.4.tar.gz > /dev/null
-cd cpuminer-opt-24.4
-sleep 2
+echo -e "\033[44;1;37m Configurando e Compilando Recursos.....     \033[0m "
+cd miner 
+./autogen.sh 
+./configure CFLAGS="-O3" 
+make 
+cd miner 
+sudo mv minerd /usr/local/bin/
 clear
 
-echo "\033[44;1;37mCompilando CPUMiner-OPT 24.4...(pode demorar um pouco)\033[0m"
-rm -f config.status
-./autogen.sh || echo done
-CFLAGS="-O3 -march=native -Wall" ./configure --with-curl
-make -j 4
-strip -s cpuminer
-# ln ./cpuminer ../cpuminer
-cd cpuminer-opt-24.4
-sudo mv cpuminer /usr/local/bin/
-clear
 
-# Comando iniciador da mineração
-#
-echo "\033[37;41mSua Mineraçao Foi Iniciada\033[01;0m \n"
-cpuminer -o stratum+tcp://$stratum
-
+echo -e "\033[37;41mSua Mineraçao Foi Iniciada com sucesso!\033[01;0m \n"
+echo -e "\033[44;1;37m Veja abaixo o status da mineracao:   \033[0m "
+minerd -o stratum+tcp://$stratum
 
