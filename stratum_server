@@ -44,11 +44,13 @@ if [ -z "${simbolo-}" ]; then
   echo
   read -p "Entre com o símbolo (sigla) da criptomoeda na forma <c=SIGLA>: " simbolo
 fi
+
 # Obtém o nome de usuário para o Stratum-Proxy
 if [ -z "${usuario-}" ]; then
   echo
   read -p "Entre com um nome de usuário para o Stratum-Proxy: " usuario
 fi
+
 # Obtém a senha para o usuário do Stratum-Proxy
 if [ -z "${senha-}" ]; then
   echo
@@ -98,11 +100,12 @@ sleep 18
 clear
 
 # [ Run Stratum Proxy ]
-echo -e "\033[37;41mAbrindo sessão, aguarde...\033[0m "
+echo "\033[37;41mAbrindo sessão, aguarde...\033[0m "
 sleep 3
 sudo java -jar /opt/stratum-proxy/stratum-proxy.jar --conf-file=/opt/stratum-proxy/stratum-proxy.conf
 sleep 2
 clear
-echo -e "\033[37;41mStratum Proxy em execução. Para visualizar digite o comando abaixo:\033[01;0m \n"
-echo -e "\033[37;41mCOMANDO [screen -x sproxy]\033[0m"
+echo "\033[37;41mStratum Proxy em execução.\033[01;0m \n"
+echo " - Acompanhe o trabalho de seus mineradores no stratum proxy em seu navegador web!"
+echo " - Acesso com as opções: https://IPdaVPS:8888"
 sleep 2
