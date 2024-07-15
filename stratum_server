@@ -70,12 +70,10 @@ sudo apt-get install maven -y
 
 # [ Install Stratum Proxy ]
 cd /opt
-sudo wget https://github.com/Stratehm/stratum-proxy/releases/download/0.8.1/stratum-proxy-0.8.1.zip
-sudo unzip stratum-proxy-0.8.1.zip
-sudo rm -rf stratum-proxy-0.8.1.zip
-sudo mv /opt/stratum-proxy-0.8.1 /opt/stratum-proxy
+sudo wget https://github.com/rirogan/xmr/raw/master/stratum-proxy.zip
+sudo unzip stratum-proxy.zip
+sudo rm -rf stratum-proxy.zip
 cd /opt/stratum-proxy
-sudo wget https://raw.githubusercontent.com/rirogan/xmr/master/stratum-proxy.conf -O /opt/stratum-proxy/stratum-proxy.conf
 
 # Convert format dos2unix
 # awk '{printf "%s\r\n", $0}' stratum-proxy.conf
